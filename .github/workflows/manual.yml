@@ -4,19 +4,19 @@ jobs:
   cypress-run:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+    - name: Setup npm package
+      run: npm init -y && npm install
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
+    - name: Cypress run
+      uses: cypress-io/github-action@v2
+      with:
           working-directory: mycypress
           install-command: npm install
-      - name: Generate report
-        run: cd mycypress && npm run test
-      - name: Upload report
-        uses: actions/upload-artifact@v2
-        with:
-          name: cypress-cucumber-report
-          path: cypress/cucumber-report/
+    - name: Generate report
+      run: cd mycypress && npm run test
+    - name: Upload report
+      uses: actions/upload-artifact@v2
+      with:
+        name: cypress-cucumber-report
+        path: cypress/cucumber-report/
