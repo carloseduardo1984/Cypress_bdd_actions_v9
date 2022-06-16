@@ -19,3 +19,10 @@ jobs:
         timeout-minutes: 10
         with:
           browser: chrome
+      - name: Generate report
+        run: cd mycypress && npm run cy:report
+      - name: Upload report
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-cucumber-report
+          path: mycypress/cypress/cucumber-report/
