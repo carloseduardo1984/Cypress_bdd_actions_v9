@@ -1,17 +1,17 @@
 [
   {
     "keyword": "Feature",
-    "name": "Login site ULTIMA",
+    "name": "Consulta site ULTIMA",
     "line": 1,
-    "id": "login-site-ultima",
+    "id": "consulta-site-ultima",
     "tags": [],
-    "uri": "Login.feature",
+    "uri": "Consulta.feature",
     "elements": [
       {
-        "id": "login-site-ultima;visualizar-opção-de-login",
+        "id": "consulta-site-ultima;visualizar-dite",
         "keyword": "Scenario",
         "line": 3,
-        "name": "Visualizar opção de login",
+        "name": "Visualizar dite",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -19,30 +19,30 @@
             "arguments": [],
             "keyword": "Given ",
             "line": 4,
-            "name": "acesso o site ultima",
+            "name": "acesso o site da ultima",
             "result": {
               "status": "passed",
-              "duration": 2974000000
+              "duration": 8616000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 5,
-            "name": "acesso a pagina de login",
+            "name": "acesse um curso",
             "result": {
               "status": "passed",
-              "duration": 2107000000
+              "duration": 7382000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 6,
-            "name": "devo visualizar botao de conecte",
+            "name": "devo visualizar a pagina do curso",
             "result": {
               "status": "passed",
-              "duration": 67000000
+              "duration": 11660000000
             }
           }
         ]
