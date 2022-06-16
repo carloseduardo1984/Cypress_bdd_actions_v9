@@ -20,7 +20,7 @@ jobs:
         with:
           browser: chrome
       - name: Generate report
-        run: cd cypress && npm run cy:report
+        run: cd cypress && npm run posttest
       - name: Upload report
         uses: actions/upload-artifact@v2
         with:
