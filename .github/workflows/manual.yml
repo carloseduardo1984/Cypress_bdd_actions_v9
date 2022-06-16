@@ -1,82 +1,13 @@
-name: Cypress-chrome
-on:
-  push:
-    branches:
-      - 'main'
-  pull_request:
+name: Firefox
+on: push
 jobs:
-
-  # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Cypress v9 and lower ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-
-  tests:
-    runs-on: ubuntu-20.04
+  firefox:
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:node12.16.1-chrome80-ff73
+      options: --user 1001
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Cypress info
-        uses: ./
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v4
         with:
-          # just for full picture after installing Cypress
-          # print information about detected browsers, etc
-          # see https://on.cypress.io/command-line#cypress-info
-          build: npx cypress info
-          working-directory: examples/v9/chrome
-
-      - name: Electron
-        uses: ./
-        with:
-          working-directory: cypress
-
-      # store screenshot captured during the test
-      - uses: actions/upload-artifact@v2
-        with:
-          name: screenshots-in-electron
-          path: cypress/screenshots
-
-      - run: npx image-size cypress/screenshots/**/*.png
-        working-directory: examples/v9/chrome
-
-      - name: Chrome
-        uses: ./
-        with:
-          working-directory: chrome
-          browser: chrome
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: screenshots-in-chrome
-          path: cypress/screenshots
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: video-in-chrome
-          path: cypress/videos
-
-      - run: npx image-size cypress/screenshots/**/*.png
-        working-directory: chrome
-
-      # I wonder if GH Actions VM includes any of the tools that
-      # can tell us the resolution of a video file
-      - run: ffprobe cypress/videos/*.mp4 || true
-      - run: mplayer -really-quiet -ao null -vo null -identify -frames 0 cypress/videos/*.mp4 || true
-
-      - name: Chrome headed
-        uses: ./
-        with:
-          working-directory: chrome
-          browser: chrome
-          headed: true
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: screenshots-in-headed-chrome
-          path: cypress/screenshots
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: video-in-headed-chrome
-          path: cypress/videos
-
-      - run: npx image-size cypress/screenshots/**/*.png
-        working-directory: chrome
+          browser: firefox
