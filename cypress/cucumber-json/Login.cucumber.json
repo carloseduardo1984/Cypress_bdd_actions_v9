@@ -1,0 +1,52 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Login site ULTIMA",
+    "line": 1,
+    "id": "login-site-ultima",
+    "tags": [],
+    "uri": "Login.feature",
+    "elements": [
+      {
+        "id": "login-site-ultima;visualizar-opção-de-login",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Visualizar opção de login",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "acesso o site ultima",
+            "result": {
+              "status": "passed",
+              "duration": 3471000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "acesso a pagina de login",
+            "result": {
+              "status": "passed",
+              "duration": 2183000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "devo visualizar botao de conecte",
+            "result": {
+              "status": "passed",
+              "duration": 59000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
