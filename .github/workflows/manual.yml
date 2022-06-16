@@ -1,24 +1,18 @@
-name: Firefox
-on: push
+name: Component Tests
+on: [push]
 jobs:
-  firefox:
+  cypress-run:
     runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node12.16.1-chrome80-ff73
-      options: --user 1001
     steps:
-      - uses: actions/checkout@v2
-      #- uses: cypress-io/github-action@v4
-     
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Cypress run
-        uses: cypress-io/github-action@v3
+        uses: cypress-io/github-action@v4
         with:
           working-directory: cy_actions
           install-command: npm install
       - name: Generate report
-        run: cd mycypress && npm run test
+        run: cd cy_actions && npm run test
       - name: Upload report
         uses: actions/upload-artifact@v3
         with:
