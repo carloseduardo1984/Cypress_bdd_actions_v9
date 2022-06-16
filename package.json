@@ -1,0 +1,33 @@
+{
+    "private": true,
+    "scripts": {
+        "cy:run": "npx cypress@9.7.0 run --browser=chrome",
+        "posttest": "node ./cypress/report.js",
+        "test": "npm run cy:run || npm run posttest"
+    },
+    "dependencies": {
+        "@types/classnames": "^2.2.6",
+        "@types/react": "^16.7.0",
+        "@types/react-dom": "^16.0.11",
+        "classnames": "^2.2.6",
+        "director": "^1.2.0",
+        "react": "^16.7.0",
+        "react-dom": "^16.7.0"
+    },
+    "devDependencies": {
+        "browserify": "^16.2.3",
+        "cypress": "^7.0.0",
+        "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
+        "cypress-cucumber-preprocessor": "^4.3.1",
+        "multiple-cucumber-html-reporter": "^1.18.0",
+        "node-static": "^0.7.11",
+        "typescript": "^4.3.5"
+    },
+    "cypress-cucumber-preprocessor": {
+        "cucumberJson": {
+            "generate": true
+        },
+        "nonGlobalStepDefinitions": false,
+        "step_definitions": "cypress/support/steps"
+    }
+}

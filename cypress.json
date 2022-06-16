@@ -1,0 +1,7 @@
+{
+    "viewportWidth": 1366,
+    "viewportHeight": 768,
+    "defaultCommandTimeout": 10000,
+    "baseUrl": "https://www.ultima.school/",
+    "testFiles": ["**/*.{feature,features}"]
+}
