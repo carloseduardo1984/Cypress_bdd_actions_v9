@@ -1,4 +1,4 @@
-# cy_actions ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=%20CONCLUÍDO&color=GREEN&style=for-the-badge)
+# cy_actions - ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=%20CONCLUÍDO&color=GREEN&style=for-the-badge)
 
 ![cy-actions](https://user-images.githubusercontent.com/33332202/174479162-71d2c902-3a0d-4cb7-a576-e76fc9e02c7e.jpg)
 
