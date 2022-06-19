@@ -2,7 +2,7 @@
 
 ![cy-actions](https://user-images.githubusercontent.com/33332202/174479162-71d2c902-3a0d-4cb7-a576-e76fc9e02c7e.jpg)
 
-For run you only need to do a simple repository update or any repo trigger`
+`For run you only need to do a simple repository update or any repo trigger
 
 - Simple Software Test approach with Cypress framework and Behavion driven development integretion on Cucumber, 
 and GitHub Action process for Continuous Integration.
