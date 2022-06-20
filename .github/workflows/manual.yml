@@ -1,12 +1,12 @@
 name: Cypress tests
 on: 
-  #schedule:
-  #  - cron: '*/5 * * * *'
-  push:
-    branches:
-      - 'main'
+  schedule:
+    - cron: '*/5 * * * *'
+  #push:
+    #branches:
+      #- 'main'
       
-  workflow_dispatch:
+  #workflow_dispatch:
 
 jobs:
   checkout-and-test:
