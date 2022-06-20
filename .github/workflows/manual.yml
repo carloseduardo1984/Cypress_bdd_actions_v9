@@ -1,7 +1,7 @@
 name: Cypress tests
 on: 
   schedule:
-    - cron:  '0 */5 * ? * *'    # At every 5th minute
+    - cron: '*/5 * * * *'
   push:
     branches:
       - 'main'
