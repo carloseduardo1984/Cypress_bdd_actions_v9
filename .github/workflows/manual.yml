@@ -2,11 +2,11 @@ name: Cypress tests
 on: 
   schedule:
     - cron: '2 * * * *'
-  #push:
-    #branches:
-      #- 'main'
+  push:
+    branches:
+     - 'main'
       
-  #workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
 
