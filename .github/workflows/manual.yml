@@ -10,8 +10,8 @@ on:
 
 jobs:
 
-  test_schedule:
-  #checkout-and-test:
+  #test_schedule:
+  checkout-and-test:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
