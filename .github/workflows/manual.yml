@@ -1,8 +1,11 @@
 name: Cypress tests
 on: 
+  schedule:
+    - cron:  '*/5 * * * *'    # At every 5th minute
   push:
     branches:
       - 'main'
+      
   workflow_dispatch:
 
 jobs:
