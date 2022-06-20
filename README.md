@@ -11,6 +11,8 @@ Here a simple example of their features:
 
 ![images](https://user-images.githubusercontent.com/33332202/174479184-e01e9bc2-86e7-43ed-bd1c-ec346a1999fc.png)
 
+[![Cypress tests](https://github.com/carloseduardo1984/cy_actions/actions/workflows/manual.yml/badge.svg)](https://github.com/carloseduardo1984/cy_actions/actions/workflows/manual.yml)
+
 
 
 
