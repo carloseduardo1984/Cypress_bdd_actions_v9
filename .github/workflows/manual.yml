@@ -1,4 +1,5 @@
-name: Cypress tests
+#DO THE TEST EACH 6 HOURS FROM MONDAY TO FRIDAY
+name: Cypress tests scheduled
 on: 
   schedule:
   - cron: "0 0 */6 * * 1-5"
