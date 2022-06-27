@@ -23,7 +23,7 @@ jobs:
 
       - name: run cypress tests with chrome
         uses: cypress-io/github-action@v2
-        timeout-minutes: 10
+        timeout-minutes: 20
         with:
           browser: chrome
       - name: Generate report
@@ -32,4 +32,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: cypress-cucumber-report
-          path: cypress/cucumber-report/
+          path: cypress/reports/
