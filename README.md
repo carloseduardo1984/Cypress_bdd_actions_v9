@@ -8,7 +8,7 @@
 - Simple Software Test approach with Cypress framework and Behavion driven development integretion on Cucumber, 
 and GitHub Action process for Continuous Integration.
 
-Here a simple example of their features:
+Here a simple example of their features: -
 
 ![images](https://user-images.githubusercontent.com/33332202/174479184-e01e9bc2-86e7-43ed-bd1c-ec346a1999fc.png)
 
