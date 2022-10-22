@@ -23,7 +23,7 @@ jobs:
 
       - name: run cypress tests with chrome
         uses: cypress-io/github-action@v2
-        timeout-minutes: 10
+        timeout-minutes: 11
         with:
           browser: chrome
       - name: Generate report
