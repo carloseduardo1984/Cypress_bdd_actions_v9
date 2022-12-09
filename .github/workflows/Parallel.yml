@@ -7,7 +7,7 @@ on: [workflow_dispatch]
 
 jobs:
    cypress-run:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     # Define Github strategy how to spin up new machines
     strategy:
      matrix:
@@ -15,20 +15,14 @@ jobs:
     # Docker image with Cypress pre-installed
     # https://github.com/cypress-io/cypress-docker-images/tree/master/included
     container: cypress/included:9.2.0
-    
+ 
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v2
-
-      - name: run cypress tests with chrome
-        uses: cypress-io/github-action@v2
-        timeout-minutes: 10
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Setup Node & Cypress Run 
+        uses: actions/setup-node@v3
         with:
-          browser: chrome
-#       - run:          
-#       - name: Upload report
-#         uses: actions/upload-artifact@v2
-#         with:
-#           name: cypress-cucumber-report
-#           path: cypress/cucumber-report/
-       
+          node-version: 16
+      - run: npm install
+      - run: npm test   
