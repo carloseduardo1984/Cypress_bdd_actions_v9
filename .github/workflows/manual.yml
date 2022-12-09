@@ -1,16 +1,10 @@
 #DO THE TEST EACH 6 HOURS FROM MONDAY TO FRIDAY
-name: Cypress manual test
-on: 
-#   schedule:
-#   - cron: "0 */6 * * 5"
-  
-#   push:
-#     branches:
-#      - 'main'
-      
-    workflow_dispatch:
+ name: Parallel test with cypress
 
-jobs:
+ on: [workflow_dispatch]
+ #on: [push, workflow_dispatch]
+
+ jobs:
 
   #test_schedule:
   checkout-and-test:
