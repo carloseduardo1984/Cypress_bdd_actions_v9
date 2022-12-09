@@ -6,15 +6,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  #test_schedule:
-  checkout-and-test:
-    runs-on: ubuntu-latest
-    steps:
+
+  test:
+  
+     name: System test - Cypress Chrome
+     runs-on: ubuntu-latest
+     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
       - name: Check out repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
       - name: run cypress tests with chrome
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v3
         timeout-minutes: 10
         with:
-          browser: chrome
+          browser: chrome     
