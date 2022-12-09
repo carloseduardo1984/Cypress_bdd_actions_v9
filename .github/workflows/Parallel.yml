@@ -1,27 +1,21 @@
 # .github/workflows/build.yml
 name: Parallel test with cypress
 
-on: [workflow_dispatch]
-#on: [push, workflow_dispatch]
+# on: [workflow_dispatch]
+on: [push, workflow_dispatch]
 
 
 jobs:
-  build:
+   cypress-run:
     runs-on: ubuntu-latest
-
-    steps:
-      - run: echo "Building .."
-
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-
+    # Define Github strategy how to spin up new machines
     strategy:
-      fail-fast: false
-      matrix:
-        ci_index: [0, 1, 2, 3]
-        ci_total: [4]
-
+     matrix:
+      job: [0, 1, 2]
+    # Docker image with Cypress pre-installed
+    # https://github.com/cypress-io/cypress-docker-images/tree/master/included
+    container: cypress/included:9.2.0
+    
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
@@ -31,10 +25,7 @@ jobs:
         timeout-minutes: 10
         with:
           browser: chrome
-        env:
-             CI_TOTAL: ${{ matrix.ci_total }}
-             CI_INDEX: ${{ matrix.ci_index }}
-          
+#       - run:          
 #       - name: Upload report
 #         uses: actions/upload-artifact@v2
 #         with:
