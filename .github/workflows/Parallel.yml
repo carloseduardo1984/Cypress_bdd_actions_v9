@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: Parallelization with Win,Ubuntu,maCOS
 'on':
   workflow_dispatch: 
 #   pull_request:
