@@ -1,12 +1,12 @@
 #DO THE TEST EACH 6 HOURS FROM MONDAY TO FRIDAY
 name: Cypress tests scheduled
 on: 
-  schedule:
-  - cron: "0 */6 * * 5"
+#   schedule:
+#   - cron: "0 */6 * * 5"
   
-  push:
-    branches:
-     - 'main'
+#   push:
+#     branches:
+#      - 'main'
       
   workflow_dispatch:
 
@@ -18,14 +18,12 @@ jobs:
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
 
-      - name: Check out repository code
-        uses: actions/checkout@v2
-
       - name: run cypress tests with chrome
-        uses: cypress-io/github-action@v2
-        timeout-minutes: 11
+        uses: cypress-io/github-action@v3
+        timeout-minutes: 10
         with:
-          browser: chrome
+          browser: chrome     
+
       - name: Generate report
         run: cd cypress && npm run posttest
       - name: Upload report
