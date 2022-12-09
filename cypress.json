@@ -1,9 +1,12 @@
 {
-    "viewportWidth": 1366,
-    "viewportHeight": 768,
-    "defaultCommandTimeout": 10000,
-    "video": false,
-    "screenshotOnRunFailure": false,
-    "baseUrl": "https://www.ultima.school/",
-    "testFiles": ["**/*.{feature,features}"]
+  "viewportWidth": 1366,
+  "viewportHeight": 768,
+  "defaultCommandTimeout": 10000,
+  "video": false,
+  "screenshotOnRunFailure": false,
+  "baseUrl": "https://www.ultima.school/",
+  "testFiles": [
+    "**/*.{feature,features}"
+  ],
+  "projectId": "7q5s1r"
 }
