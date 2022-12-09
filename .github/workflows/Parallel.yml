@@ -1,29 +1,30 @@
-# .github/workflows/build.yml
-name: Parallel test with cypress
-
-# on: [workflow_dispatch]
-# on: [push, workflow_dispatch]
-on: [workflow_dispatch]
-
+name: GitHub Actions Demo
+'on':
+  workflow_dispatch: 
+#   pull_request:
+#     branches:
+#       - master
+#     schedule:
+#       - cron: '* 5 * * *'
 jobs:
-  test:
-    name: Cypress run
-    runs-on: ubuntu-20.04
+  Google-Test:
     strategy:
-      fail-fast: false
       matrix:
-        # run 3 copies of the current job in parallel
-        containers: [1, 2, 3]
+       version: [16]
+       os: [ ubuntu-latest, windows-latest, macos-latest ]
+    runs-on: ${{ matrix.os }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
+      - uses: actions/setup-node@v3
         with:
-          record: true
-          parallel: true
-          group: 'Actions example'
+          node-version: ${{ matrix.version }}
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm install
+      - run: npm test   
         env:          
-          CYPRESS_RECORD_KEY: ${{ secrets.RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           CYPRESS_RECORD_KEY: ${{ secrets.RECORD_KEY }}
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
