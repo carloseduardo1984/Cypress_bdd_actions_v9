@@ -2,8 +2,8 @@
 name: Parallel test with cypress
 
 # on: [workflow_dispatch]
-on: [push, workflow_dispatch]
-
+# on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 
 jobs:
    cypress-run:
