@@ -7,7 +7,7 @@ on: [workflow_dispatch]
 
 jobs:
    cypress-run:
-    runs-on: ubuntu-20.04
+     runs-on: ubuntu-latest
     # Define Github strategy how to spin up new machines
     strategy:
      matrix:
